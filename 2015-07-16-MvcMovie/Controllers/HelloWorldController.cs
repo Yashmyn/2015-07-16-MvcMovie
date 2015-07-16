@@ -8,6 +8,8 @@ namespace _2015_07_16_MvcMovie.Controllers
         //
         // GET: /HelloWorld/
 
+        //when we append "HelloWorld" to the browser name, we get "This is my <b>default</b> action..."
+
         public string Index()
         {
             return "This is my <b>default</b> action...";
