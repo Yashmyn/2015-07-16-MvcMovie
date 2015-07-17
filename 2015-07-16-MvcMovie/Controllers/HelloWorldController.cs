@@ -35,10 +35,20 @@ namespace _2015_07_16_MvcMovie.Controllers
         //    return HttpUtility.HtmlEncode("Hello " + name + ", NumTimes is: " + numTimes);
         //}
 
-        public string Welcome(string name, int ID = 1)
+        //public string Welcome(string name, int ID = 1)
+        //{
+        //    return HttpUtility.HtmlEncode("Hello " + name + ", ID: " + ID);
+        //}
+        //CHANGING CODE AGAIN, TO PUT DYNAMIC DATA (PARAMETERS) THAT THE VIEW TEMPLATE NEEDS IN A VIEWBAG OBJECT THAT THE VIEW TEMPLATE CAN THEN ACCESS.
+
+        public ActionResult Welcome(string name, int numTimes = 1)
         {
-            return HttpUtility.HtmlEncode("Hello " + name + ", ID: " + ID);
+            ViewBag.Message = "Hello " + name;
+            ViewBag.NumTimes = numTimes;
+
+            return View();
         }
+
     }
 }
 
