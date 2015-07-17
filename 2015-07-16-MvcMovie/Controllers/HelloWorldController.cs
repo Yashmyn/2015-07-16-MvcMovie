@@ -10,10 +10,19 @@ namespace _2015_07_16_MvcMovie.Controllers
 
         //when we append "HelloWorld" to the browser name, we get "This is my <b>default</b> action..."
 
-        public string Index()
+
+        //public string Index()
+        //{
+        //    return "This is my <b>default</b> action...";
+        //}
+
+        //REPLACING THAT WITH THIS, THEN GOING TO MAKE CHANGE TO INDEX:
+
+        public ActionResult Index()
         {
-            return "This is my <b>default</b> action...";
+            return View();
         }
+           
 
         //
         // GET: /HelloWorld/Welcome/
