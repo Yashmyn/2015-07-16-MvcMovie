@@ -39,7 +39,7 @@ namespace _2015_07_16_MvcMovie.Controllers
         //{
         //    return HttpUtility.HtmlEncode("Hello " + name + ", ID: " + ID);
         //}
-        //CHANGING CODE AGAIN, TO PUT DYNAMIC DATA (PARAMETERS) THAT THE VIEW TEMPLATE NEEDS IN A VIEWBAG OBJECT THAT THE VIEW TEMPLATE CAN THEN ACCESS.
+        //CHANGING CODE AGAIN, TO PUT IN DYNAMIC DATA (PARAMETERS) THAT THE VIEW TEMPLATE NEEDS IN A VIEWBAG OBJECT THAT THE VIEW TEMPLATE CAN THEN ACCESS.
 
         public ActionResult Welcome(string name, int numTimes = 1)
         {
