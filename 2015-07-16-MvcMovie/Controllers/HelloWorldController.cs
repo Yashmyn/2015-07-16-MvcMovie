@@ -18,6 +18,8 @@ namespace _2015_07_16_MvcMovie.Controllers
         //
         // GET: /HelloWorld/Welcome/
 
+        //change variable from "numTimes" to "ID", which matches the URL specification in the RegisterRoutes method.
+
         public string Welcome(string name, int ID = 1)
         {
             return HttpUtility.HtmlEncode("Hello " + name + ", ID: " + ID);

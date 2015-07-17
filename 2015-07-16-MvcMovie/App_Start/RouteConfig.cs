@@ -8,6 +8,7 @@ using System.Web.Routing;
 namespace _2015_07_16_MvcMovie
 {
     public class RouteConfig
+ 
     {
         public static void RegisterRoutes(RouteCollection routes)
         {
