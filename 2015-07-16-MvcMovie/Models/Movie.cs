@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations; //added this using statement
 using System.Data.Entity;
 
 namespace _2015_07_16_MvcMovie.Models  //created my first model
@@ -7,6 +8,12 @@ namespace _2015_07_16_MvcMovie.Models  //created my first model
     {
         public int ID { get; set; }
         public string Title { get; set; }
+
+        [Display(Name = "Release Date")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:d}", ApplyFormatInEditMode = true)]
+        //added above three attributes
+
         public DateTime ReleaseDate { get; set; }
         public string Genre { get; set; }
         public decimal Price { get; set; }
