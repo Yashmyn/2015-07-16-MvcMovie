@@ -15,8 +15,9 @@ namespace _2015_07_16_MvcMovie.Controllers
         private MovieDBContext db = new MovieDBContext();
 
         // GET: Movies
-        public ActionResult Index(string searchString)
+        public ActionResult Index(string id)
         {
+            string searchString = id; //changed method signature of Index, to allow passage of search title as route data (a URL segment) instead of as query string value.
             var movies = from m in db.Movies
                          select m;
 
