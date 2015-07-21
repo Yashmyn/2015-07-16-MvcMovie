@@ -24,7 +24,7 @@ namespace _2015_07_16_MvcMovie.Controllers
             {
                 movies = movies.Where(s => s.Title.Contains(searchString));
             }
-            return View(db.Movies.ToList());
+            return View(movies);
         }
 
         // GET: Movies/Details/5
