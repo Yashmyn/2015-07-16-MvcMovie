@@ -15,9 +15,16 @@ namespace _2015_07_16_MvcMovie.Controllers
         private MovieDBContext db = new MovieDBContext();
 
         // GET: Movies
-        public ActionResult Index(string id)
+
+        public ActionResult Index(string movieGenre, string searchString) //replacing original Index method
         {
-            string searchString = id; //changed method signature of Index, to allow passage of search title as route data (a URL segment) instead of as query string value.
+            var GenreLst = new List<string>();
+            var GenreQry = from d in db.Movies 
+                           orderby d.Genre 
+                           select d.Genre;
+            GenreLst.AddRange(GenreQry.Distinct());
+            ViewBag.movieGenre = new SelectList(GenreLst);
+
             var movies = from m in db.Movies
                          select m;
 
@@ -25,9 +32,14 @@ namespace _2015_07_16_MvcMovie.Controllers
             {
                 movies = movies.Where(s => s.Title.Contains(searchString));
             }
+            if (!String.IsNullOrEmpty(movieGenre))
+            {
+                movies = movies.Where(x => x.Genre == movieGenre);
+            }
             return View(movies);
         }
 
+       
         // GET: Movies/Details/5
         public ActionResult Details(int? id)
         {
