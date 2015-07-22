@@ -14,7 +14,7 @@ namespace _2015_07_16_MvcMovie.Migrations
         }
 
 
-        protected override void Seed(_2015_07_16_MvcMovie.Models.MovieDBContext context)
+        protected override void Seed(_2015_07_16_MvcMovie.Models.MovieDBContext context) //replaced already commented-out Seed method
         {
             context.Movies.AddOrUpdate(i => i.Title,
                 new Movie
