@@ -1,5 +1,6 @@
 namespace _2015_07_16_MvcMovie.Migrations
 {
+    using _2015_07_16_MvcMovie.Models;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
@@ -12,6 +13,7 @@ namespace _2015_07_16_MvcMovie.Migrations
             AutomaticMigrationsEnabled = false;
         }
 
+
         protected override void Seed(_2015_07_16_MvcMovie.Models.MovieDBContext context)
         {
             context.Movies.AddOrUpdate(i => i.Title,
@@ -23,6 +25,33 @@ namespace _2015_07_16_MvcMovie.Migrations
                     Price = 7.99M
                 },
 
+                new Movie
+                {
+                    Title = "Ghostbusters ",
+                    ReleaseDate = DateTime.Parse("1984-3-13"),
+                    Genre = "Comedy",
+                    Price = 8.99M
+                },
+
+                new Movie
+                {
+                    Title = "Ghostbusters 2",
+                    ReleaseDate = DateTime.Parse("1986-2-23"),
+                    Genre = "Comedy",
+                    Price = 9.99M
+                },
+
+                new Movie
+                {
+                    Title = "Rio Bravo",
+                    ReleaseDate = DateTime.Parse("1959-4-15"),
+                    Genre = "Western",
+                    Price = 3.99M
+                }
+           );
+        }
+
+    }
 
             //  This method will be called after migrating to the latest version.
 
@@ -36,6 +65,5 @@ namespace _2015_07_16_MvcMovie.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
-        }
-    }
+
 }
